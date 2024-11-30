@@ -1,0 +1,57 @@
+# Игнорируем временные файлы Visual Studio
+.vs/
+.vscode/
+.idea/
+
+# Игнорируем скомпилированные файлы и каталоги
+Debug/
+Release/
+x64/
+x86/
+
+# Игнорируем файлы и каталоги сборки для CMake
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+CMakeScripts/
+
+# Игнорируем все файлы настроек проекта
+.vs2019/
+.vs2017/
+.vs2015/
+.vs2013/
+
+# Игнорируем файлы пользователя
+*.user
+*.userosscache
+*.suo
+*.sdf
+*.db
+*.pdb
+*.aps
+
+# Игнорируем файлы данных конфигурации
+*.suo
+*.user
+*.userosscache
+*.sdf
+*.db
+
+# Игнорируем файлы для профилей и инструментариев
+*.log
+*.vspscc
+*.vssscc
+
+# Игнорируем файлы и каталоги IntelliSense
+ipch/
+*.pdb
+
+# Игнорируем временные файлы и кэш
+*.ilk
+*.exp
+*.appref-ms
+*.manifest
+
+# Игнорируем системные файлы Mac
+.DS_Store
