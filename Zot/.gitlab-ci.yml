@@ -1,0 +1,63 @@
+stages:
+  - build
+  - test
+
+build:
+  stage: build
+  script:
+    - cd lab2/src
+    - ls
+    - mkdir build
+    - g++ -std=c++20 tests/Lab2.cpp sources/COA/COA.cpp sources/Utils/Solver.cpp -o build/TrigonometricApproximation -static-libstdc++
+  artifacts:
+    paths:
+      - lab2/src/build/
+    expire_in: 1 hour
+
+test:
+  stage: test
+  dependencies:
+    - build
+  script:
+    - cd lab2/src
+    - chmod +x run_test.sh
+    - ./run_test.sh
+  artifacts:
+    paths:
+      - lab2/src/build/assets
+
+# stages:
+#     - build
+#     - test
+
+# build:
+#     stage: build
+#     image: registry.gitlab.com/cmake/cmake:3.20
+#     before_script:
+#         - cmake --version
+#     script:
+#         - cd lab2/src
+#         - mkdir build
+#         - cd build
+#         - cmake ..
+#         - cmake --build .
+#     artifacts:
+#         paths:
+#             - build/
+#         expire_in: 10 mins
+
+# test:
+#     stage: test
+#     image: registry.gitlab.com/cmake/cmake:3.20
+#     dependencies:
+#         - build
+#     script:
+#         - cd lab2/src
+#         - chmod +x run_test.sh
+#         - ./run_test.sh
+#     artifacts:
+#         paths:
+#             - build/Debug/assets/
+#         expire_in: 1 week
+        
+     
